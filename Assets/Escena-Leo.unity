@@ -233,6 +233,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1874525357909088, guid: 254de3b54cdc7ea4b9a6e91c2ae51b23, type: 2}
+      propertyPath: m_Name
+      value: BLOCKING
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 254de3b54cdc7ea4b9a6e91c2ae51b23, type: 2}
   m_IsPrefabParent: 0
