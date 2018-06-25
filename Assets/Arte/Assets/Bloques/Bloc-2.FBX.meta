@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 388aea196a75e74479002868b5ff493a
-timeCreated: 1529917840
+guid: 1ac60402cb6f6134f88419ddc5b83d85
+timeCreated: 1529920984
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Bloc-1
+    4300000: Bloc-2
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,7 +41,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 2.2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -64,7 +64,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 0
+    tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
