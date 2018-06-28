@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class movimiento : MonoBehaviour {
 
-    private float forwardSpeed = 2.5f;
+    private float forwardSpeed = 5f;
     private float runSpeed = 7.0f;
     private float TimeToMove = 0.2f;
     private float Timer = 0.0f;
@@ -99,7 +99,7 @@ public class movimiento : MonoBehaviour {
                 animator.SetInteger("moviendo", 0);
             }
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && CanJump == true && startTimer == false && CanMove == true)
+		if (Input.GetButton("Jump") && CanJump == true && startTimer == false && CanMove == true)
         {
             rig.velocity = jump;
             IsJumping = true;
