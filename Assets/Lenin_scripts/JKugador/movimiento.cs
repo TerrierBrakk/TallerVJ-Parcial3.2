@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class movimiento : MonoBehaviour {
 
-
-   
-
-
     private float forwardSpeed = 2.5f;
     private float runSpeed = 7.0f;
     private float TimeToMove = 0.2f;
@@ -20,18 +16,25 @@ public class movimiento : MonoBehaviour {
     private bool CanMove = true;
     private bool startTimer = false;
     private bool finishRotation = true;
-    private Vector3 jump = new Vector3(0.0f, 5.0f, 0.0f);
+    private Vector3 jump = new Vector3(0.0f, 7.0f, 0.0f);
     private Ray Grounded;
     public RaycastHit hit;
     private Rigidbody rig;
     private Quaternion lookingRight = Quaternion.Euler(0.0f, 90.0f, 0.0f);
     private Quaternion lookingLeft = Quaternion.Euler(0.0f, 270.0f, 0.0f);
+    public Animator animator;
+
+    bool IsMoving;
+    bool IsJumping;
 
 
     // Use this for initialization
     void Start()
     {
         rig = GetComponent<Rigidbody>();
+        IsMoving = false;
+        IsJumping = false;
+     
     }
 
     // Update is called once per frame
@@ -49,6 +52,7 @@ public class movimiento : MonoBehaviour {
             startTimer = false;
         }
 
+        
 
         if (Input.GetKey(KeyCode.D) && startTimer == false && CanMove == true)
         {
@@ -58,6 +62,7 @@ public class movimiento : MonoBehaviour {
                 finishRotation = true;
 
             }
+
             Move();
 
         }
@@ -71,6 +76,7 @@ public class movimiento : MonoBehaviour {
                 finishRotation = true;
 
             }
+            
             Move();
         }
 
@@ -84,15 +90,32 @@ public class movimiento : MonoBehaviour {
             CanRun = false;
         }
         //Jump
-        if (Physics.Raycast(Grounded, out hit, .6f))
+        if (Physics.Raycast(Grounded, out hit, .09f))
         {
             CanJump = true;
+            IsJumping = false;
+            if(IsMoving == false)
+            {
+                animator.SetInteger("moviendo", 0);
+            }
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) && CanJump == true && startTimer == false && CanMove == true)
         {
             rig.velocity = jump;
+            IsJumping = true;
+            animator.SetInteger("movimiento", 3);
             CanJump = false;
         }
+
+        if((Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A)) && IsJumping == false)
+        {
+            IsMoving = false;
+            animator.SetInteger("movimiento", 0);
+
+        }
+
+
+
 
     }
     //MoveOverTime
@@ -144,13 +167,25 @@ public class movimiento : MonoBehaviour {
     //Move
     public void Move()
     {
+        IsMoving = true;
         if (CanRun == false && finishRotation == true)
         {
+
+            //animator.SetBool("caminando", true);
+            //animator.SetBool("corriendo", false);
+            animator.SetInteger("movimiento", 1);
+
             transform.Translate(new Vector3(0.0f, 0.0f, forwardSpeed) * Time.deltaTime);
 
         }
         else if (CanRun == true && finishRotation == true)
         {
+
+            //animator.SetBool("corriendo", true);
+            //animator.SetBool("caminando", false);
+
+            animator.SetInteger("movimiento", 2);
+
             transform.Translate(new Vector3(0.0f, 0.0f, runSpeed) * Time.deltaTime);
 
         }

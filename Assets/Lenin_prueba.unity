@@ -7579,6 +7579,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &495212373 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95678804323293432, guid: c9fc0d1e1d880944bae576b408ebe310,
+    type: 2}
+  m_PrefabInternal: {fileID: 1058752378}
 --- !u!1 &526282040
 GameObject:
   m_ObjectHideFlags: 0
@@ -8113,6 +8118,16 @@ Prefab:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 95678804323293432, guid: c9fc0d1e1d880944bae576b408ebe310,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: eb0ed52b9e29c074ba69df0ec1da58ec, type: 2}
+    - target: {fileID: 114533925202029732, guid: c9fc0d1e1d880944bae576b408ebe310,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 495212373}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9fc0d1e1d880944bae576b408ebe310, type: 2}
   m_IsPrefabParent: 0
