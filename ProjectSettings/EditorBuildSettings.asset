@@ -4,4 +4,25 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: b3dbc22e5c75a8642b7779e40d3578f7
+  - enabled: 1
+    path: Assets/Scenes/Lenin_prueba.unity
+    guid: 9876f110613ba8b41afd0690e10e4469
+  - enabled: 1
+    path: Assets/Scenes/Creditos.unity
+    guid: 96e86c738b2a7cd4d84d6271684f3a31
+  - enabled: 1
+    path: Assets/Scenes/How2Play2.unity
+    guid: 2f975e2f5e10d674c906eeca24e252e4
+  - enabled: 1
+    path: Assets/Scenes/How2Play.unity
+    guid: 929930c6245e0cc4e92b75cf5def5057
+  - enabled: 1
+    path: Assets/Scenes/How2Play3.unity
+    guid: 6d697a34e86c8f74c8746c736971b68c
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 822a8e08ac6312c4a9fabd4c7a0cee7b
