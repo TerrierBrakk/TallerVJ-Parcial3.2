@@ -6,6 +6,7 @@ TagManager:
   tags:
   - jugador
   - Jugador
+  - Objeto
   layers:
   - Default
   - TransparentFX

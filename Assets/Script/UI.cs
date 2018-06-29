@@ -5,9 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class UI : MonoBehaviour {
+	int contador=0;
 	private int vidas=3;
 	public Text UIvidas;
+	public Text UIScore;
 	int daño=1;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,6 +20,7 @@ public class UI : MonoBehaviour {
 	void Update () {
 
 		UIvidas.text = vidas.ToString ();
+		UIScore.text = contador.ToString ();
 		perdivida ();
 
 	}
@@ -29,6 +33,9 @@ public class UI : MonoBehaviour {
 		{
 			vidas -= daño;
 			print ("menos una vida");
+		}
+		if (other.gameObject.CompareTag ("Objeto")) {
+			contador=contador+1;
 		}
 	}
 
