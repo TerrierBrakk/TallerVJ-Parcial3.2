@@ -22,6 +22,7 @@ public class UI : MonoBehaviour {
 		UIvidas.text = vidas.ToString ();
 		UIScore.text = contador.ToString ();
 		perdivida ();
+		colectando ();
 
 	}
 
@@ -35,6 +36,7 @@ public class UI : MonoBehaviour {
 			print ("menos una vida");
 		}
 		if (other.gameObject.CompareTag ("Objeto")) {
+
 			contador=contador+1;
 		}
 	}
@@ -49,5 +51,17 @@ public class UI : MonoBehaviour {
 	void death()
 	{		
 			SceneManager.LoadScene ("GameOver");
+	}
+	void colectando()
+	{
+		if (contador == 20) 
+		{
+			Win ();
+		}
+	}
+	void Win()
+	{
+		print ("Gnaste");
+		SceneManager.LoadScene ("Win");
 	}
 }

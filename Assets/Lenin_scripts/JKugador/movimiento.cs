@@ -80,15 +80,6 @@ public class movimiento : MonoBehaviour {
             Move();
         }
 
-        //Run
-        if (Input.GetKey(KeyCode.LeftArrow) && CanMove == true)
-        {
-            CanRun = true;
-        }
-        else
-        {
-            CanRun = false;
-        }
         //Jump
         if (Physics.Raycast(Grounded, out hit, .09f))
         {
@@ -191,6 +182,21 @@ public class movimiento : MonoBehaviour {
         }
     }
 
+	void OnCollisionEnter(Collision other)
+	{
+		if(other.gameObject.tag=="platform")
+		{
+			transform.parent=other.transform;
+		}
+	}
 
+	void OnCollisionExit(Collision other)
+	{
+		if (other.gameObject.tag == "platform") 
+		{
+
+			transform.parent = null;
+		}
+	}
 
 }
